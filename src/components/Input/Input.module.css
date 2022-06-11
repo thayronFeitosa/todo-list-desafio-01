@@ -4,7 +4,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: calc(0px - 1.5rem - 6px);
+    margin-top: calc(0px - 1.5rem - 4px);
 
 }
 
@@ -38,6 +38,8 @@
     background: var(--blueDark);
 
     transition: background 0.2s;
+
+    font-weight: bold
     
 }
 
