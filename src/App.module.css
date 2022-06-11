@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  
+    /* background: red; */
+}
+
+.line {
+    width: 100%;
+    border-top: 1px solid var(--gray-400);
+    width: 46rem;
+
+}
+
+.containerTask {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    width: 46rem;
+    height: 18.1875rem;
+    
+}
+
+
+.historyTasks {
+    margin-top: 4.125rem;
+    margin-bottom: 1.5rem;
+    width: 46rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.createdTasks {
+    display: flex;
+    align-items: center;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.concludedTasks {
+    display: flex;
+    align-items: center;
+    color: var(--purple);
+    font-weight: bold;
+}
+
+.resultStatusTasks  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5625rem;
+    height: 1.1875rem;
+    color: var(--gray-100);
+    background: var(--gray-400);
+    gap: 0.625rem;
+    margin-left: 0.3125rem;
+    border-radius: 62.4375rem;
+    font-size: 0.75rem;
+}
+
+.notAlreadyExistsTasks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.notAlreadyExistsTasks img {
+  margin-bottom: 1rem;
+}
+
+.notAlreadyExistsTasks p:not(:last-of-type){
+    font-weight: bold;
+}
