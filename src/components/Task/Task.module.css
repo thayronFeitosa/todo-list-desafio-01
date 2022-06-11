@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    align-items: center;
+    /* justify-content:space-between; */
+    width: 46rem;
+    height: 4.5rem;
+    background: var(--gray-500);
+    border-radius: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 1rem 0.3rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.taskParagraph {
+    width: 90%;
+    padding: 0 2rem 0 0.5rem;
+    color: var(--gray-100);
+    word-wrap: break-word;
+}
+
+.concludedTasks {
+    width: 90%;
+    padding: 0 2rem 0 0.5rem;
+    color: var(--gray-100);
+    word-wrap: break-word;
+    text-decoration-line: line-through;
+    color: var(--gray-300)
+}
+
+
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+    border: 0;
+}
+
+.circle svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+    color: var(--blue);
+    border-radius: 50%;
+    border: 0;
+}
+
+
+
+.isComplete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--gray-100);
+    background: var(--purpleDark);
+    border: 0;
+
+}
+
+.trash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    width: 24px;
+    height: 24px;
+}
+
+.trash svg {
+    color: var(--gray-300);
+
+    transition: color 0.2s, background 0.1s
+}
+
+.trash:hover {
+    width: 24px;
+    height: 24px;
+    background: var(--gray-400);
+    border-radius: 5px;
+}
+
+.trash svg:hover {
+    color: var(--danger);
+}

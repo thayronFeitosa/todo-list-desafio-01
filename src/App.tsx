@@ -4,10 +4,12 @@ import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { useState } from "react";
 import ClipboardText from "./assets/Clipboard.svg";
+import { Task } from "./components/Task";
 
 function App() {
   const [tasks, setTasks] = useState<any[]>([]);
   const [tasksCompleted, setTasksCompleted] = useState<number>(0);
+  const [tasksCreated, setTasksCreated] = useState<number>(0);
 
   function handleChangeInput(handleChangeInput: any) {
     const newTask = {
@@ -17,11 +19,21 @@ function App() {
     };
 
     setTasks([...tasks, newTask]);
-    onCompleteTask();
+    setTasksCreated(tasksCreated + 1);
   }
 
-  function onCompleteTask() {
-    setTasksCompleted(0);
+  function onCompleteTask(id: number) {
+    const statusTasks = tasks.map((item) =>
+      item.id === id ? { ...item, isConcluded: !item.isConcluded } : item
+    );
+
+    setTasks(statusTasks);
+    setTasksCompleted(tasksCompleted + 1);
+  }
+
+  function onDestroyTask(id: number) {
+    const filter = tasks.filter((task) => task.id !== id);
+    setTasks(filter);
   }
 
   return (
@@ -32,7 +44,7 @@ function App() {
         <div className={styles.historyTasks}>
           <div className={styles.createdTasks}>
             <p> Tarefas criadas</p>
-            <p className={styles.resultStatusTasks}>{tasks.length}</p>
+            <p className={styles.resultStatusTasks}>{tasksCreated}</p>
           </div>
 
           <div className={styles.concludedTasks}>
@@ -41,18 +53,32 @@ function App() {
           </div>
         </div>
 
-        <span className={styles.line}></span>
-
         {tasks.length === 0 ? (
-          <div className={styles.containerTask}>
-            <div className={styles.notAlreadyExistsTasks}>
-              <img src={ClipboardText} alt="Clipboard" />
-              <p>Você ainda não tem tarefas cadastradas</p>
-              <p>Crie tarefas e organize seus itens a fazer</p>
+          <>
+            <span className={styles.line}></span>
+            <div className={styles.containerTask}>
+              <div className={styles.notAlreadyExistsTasks}>
+                <img src={ClipboardText} alt="Clipboard" />
+                <p>Você ainda não tem tarefas cadastradas</p>
+                <p>Crie tarefas e organize seus itens a fazer</p>
+              </div>
             </div>
-          </div>
+          </>
         ) : (
-          <div>asdfasdf</div>
+          <>
+            {tasks.map((task) => {
+              return (
+                <Task
+                  task={task.task}
+                  id={task.id}
+                  key={task.id}
+                  isComplete={task.isConcluded}
+                  onCompleteTask={onCompleteTask}
+                  onDestroyTask={onDestroyTask}
+                />
+              );
+            })}
+          </>
         )}
       </div>
     </div>
