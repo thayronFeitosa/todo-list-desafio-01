@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-700);
+    width: 100%;
+    height: 12.5rem;
+}
+
+.todo {
+    display: flex;
+    flex-direction: row;
+}
+
+.todo img {
+    margin-right: 0.75rem;
+    font-size: 2.5rem;
+}
+
+.to {
+    color: var(--blue);
+    font-size: 2.5rem;
+}
+
+.do {
+    color: var(--purpleDark);
+    font-size: 2.5rem;
+}
